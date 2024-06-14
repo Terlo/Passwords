@@ -4,7 +4,9 @@ import string
 
 # Function to generate a unique passcode
 def generate_passcode(length=12):
-    characters = string.ascii_uppercase + string.ascii_lowercase + string.digits
+    # Include special characters relating to 1-0 on a standard QWERTY keyboard
+    special_chars = '!@#$%^&*()'
+    characters = string.ascii_uppercase + string.ascii_lowercase + string.digits + special_chars
     passcode = ''.join(random.choice(characters) for _ in range(length))
     return passcode
 
